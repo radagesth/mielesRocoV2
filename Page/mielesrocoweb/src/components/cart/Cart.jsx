@@ -10,7 +10,7 @@ export const Cart = () => {
 
 
     const handleCheckout = () => {
-        navigate('/checkout'); // Redirigir a la ruta del formulario
+        navigate('/CheckoutForm'); // Redirigir a la ruta del formulario
     };
 
 
@@ -33,7 +33,7 @@ export const Cart = () => {
                                 />
                                 <div className="cart__item__info">
                                     <h3 className="cart__item__title">{item.product.name}</h3>
-                                    <p className="cart__item__price">${item.product.price.toFixed(0)}</p>
+                                    <p className="cart__item__price">${item.product.price.toFixed()}</p>
                                 </div>
                                 <div className="cart__item__controls">
                                     <button

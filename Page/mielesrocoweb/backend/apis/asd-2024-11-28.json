@@ -1,0 +1,9 @@
+{
+    "formData": {
+        "name": "asd",
+        "phone": "123",
+        "delivery": true,
+        "address": "asd"
+    },
+    "cartData": []
+}

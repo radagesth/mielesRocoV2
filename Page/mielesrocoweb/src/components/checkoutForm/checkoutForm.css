@@ -1,0 +1,47 @@
+/* CheckoutForm.css */
+
+.checkout-form {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 2rem auto; /* Centrar el formulario horizontalmente */
+    padding: 1.5rem; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.checkout-form label {
+    display: block; /* Hacer que las etiquetas ocupen toda la línea */
+    margin-bottom: 0.5rem; /* Espacio debajo de la etiqueta */
+    font-weight: bold; /* Negrita para las etiquetas */
+    color: #2d3748; /* Color del texto */
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="tel"],
+.checkout-form input[type="checkbox"] {
+    width: 100%; /* Ancho completo para los campos de texto */
+    padding: 0.5rem; /* Espaciado interno */
+    margin-bottom: 1rem; /* Espacio debajo de cada campo */
+    border: 1px solid #e2e8f0; /* Borde gris claro */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente */
+}
+
+.checkout-form input[type="checkbox"] {
+    width: auto; /* Ancho automático para el checkbox */
+}
+
+.checkout-form button {
+    background-color: #d69e2e; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    padding: 0.75rem; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    font-weight: bold; /* Negrita para el texto del botón */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.checkout-form button:hover {
+    background-color: #b7791f; /* Color de fondo más oscuro al pasar el ratón */
+}
