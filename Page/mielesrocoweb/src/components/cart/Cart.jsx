@@ -2,9 +2,19 @@ import React from 'react';
 import { useCart } from '../../context/CartContext';
 import { Minus, Plus, X } from 'lucide-react';
 import './cart.css';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 export const Cart = () => {
     const { state, dispatch } = useCart();
+    const navigate = useNavigate(); // Usar useNavigate
+
+
+    const handleCheckout = () => {
+        navigate('/checkout'); // Redirigir a la ruta del formulario
+    };
+
+
+
 
     return (
         <div className="cart">
@@ -23,7 +33,7 @@ export const Cart = () => {
                                 />
                                 <div className="cart__item__info">
                                     <h3 className="cart__item__title">{item.product.name}</h3>
-                                    <p className="cart__item__price">${item.product.price.toFixed(2)}</p>
+                                    <p className="cart__item__price">${item.product.price.toFixed(0)}</p>
                                 </div>
                                 <div className="cart__item__controls">
                                     <button
@@ -57,10 +67,13 @@ export const Cart = () => {
                     </div>
                     <div className="cart__total-section">
                         <div className="cart__total">
-                            <span>Total:</span>
-                            <span className="cart__total-price">${state.total.toFixed(2)}</span>
+                            <span className='cart__total__amount'>Total:</span>
+                            <span className="cart__total__amount">${state.total.toFixed(0)}</span>
                         </div>
-                        <button className="cart__checkout-button">
+                        <button 
+                            onClick={handleCheckout} // Manejar clic en el botón
+                            className="cart__item__button"
+                        >
                             Proceder al Pago
                         </button>
                     </div>

@@ -4,7 +4,7 @@ import { CartProvider } from '../../context/CartContext';
 import { ProductList } from '../productList/productList';
 import { Cart } from '../cart/Cart';
 
-function Home() {
+function home() {
     return (
         <CartProvider>
             <div className="home home__min-h-screen">
@@ -20,4 +20,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default home;
