@@ -1,0 +1,19 @@
+/* notFound.css */
+
+/* Block: not-found */
+.not-found {
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    min-height: 100vh; /* Altura mínima de la pantalla */
+    background-color: #f7fafc; /* Color de fondo gris claro */
+    color: #2d3748; /* Color gris oscuro para el texto */
+    font-family: Arial, sans-serif; /* Fuente general */
+    text-align: center; /* Centrar el texto */
+}
+
+.not-found__message {
+    font-size: 1.5rem; /* Tamaño de fuente para el mensaje */
+    font-weight: bold; /* Negrita */
+    margin: 0; /* Sin margen */
+}

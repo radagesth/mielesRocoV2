@@ -1,6 +1,70 @@
-.body{
-    background-color: black;
+/* home.css */
 
-
-
+/* Estilo general para la página */
+.home {
+    min-height: 100vh; /* min-h-screen */
+    background-color: #f7fafc; /* bg-gray-100 */
 }
+
+/* Estilo para el encabezado */
+.header {
+    background-color: #d97706; /* bg-amber-500 */
+    color: #ffffff; /* text-white */
+    padding: 1rem; /* py-4 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+/* Contenedor para el contenido del encabezado */
+.header__container {
+    max-width: 1280px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 1rem; /* Espaciado horizontal */
+}
+
+/* Estilo para el título en el encabezado */
+.header__title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold; /* font-bold */
+}
+
+/* Estilo para el contenido principal */
+.main {
+    max-width: 1280px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 2rem 1rem; /* py-8 px-4 */
+}
+
+/* Estilo para la cuadrícula de productos y carrito */
+.grid {
+    display: grid; /* grid */
+    grid-template-columns: repeat(1, 1fr); /* grid-cols-1 */
+    gap: 2rem; /* gap-8 */
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 1024px) { /* lg */
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+    }
+}
+
+/* Estilo para la sección de productos */
+.product-section {
+    grid-column: span 2; /* lg:col-span-2 */
+}
+
+/* Estilo para el título de productos */
+.product-section__title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold; /* font-bold */
+    color: #2d3748; /* text-gray-800 */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* Estilo para la sección del carrito */
+.cart-section {
+    grid-column: span 1; /* lg:col-span-1 */
+}
+
+/* Estilos adicionales de home.css (si los hay) */
+/* Aquí puedes agregar cualquier estilo adicional que haya en home.css */

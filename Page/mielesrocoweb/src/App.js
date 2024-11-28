@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // Importar componentes
 import Home from './components/home/Home.jsx';
 import NotFound from './components/notFound/notFound.jsx';
+import NavBar from './components/navBar/navBar.jsx';
 
 function App() {
   return (

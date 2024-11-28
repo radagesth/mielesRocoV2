@@ -1,0 +1,61 @@
+/* productCard.css */
+
+/* Estilo para la tarjeta del producto */
+.product-card {
+    background-color: #ffffff; /* bg-white */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    overflow: hidden; /* overflow-hidden */
+    transition: transform 0.3s ; /* transition-transform */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+.product-card__image {
+    width: 100%; /* w-full */
+    height: 12rem; /* h-48 */
+    object-fit: cover; /* object-cover */
+}
+
+.product-card__content {
+    padding: 1rem; /* p-4 */
+}
+
+.product-card__title {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #2d3748; /* text-gray-800 */
+}
+
+.product-card__description {
+    color: #4a5568; /* text-gray-600 */
+    margin-top: 0.25rem; /* mt-1 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.product-card__price {
+    margin-top: 1rem; /* mt-4 */
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold; /* font-bold */
+    color: #d69e2e; /* text-amber-600 */
+}
+
+.product-card__button {
+    background-color: #d69e2e; /* bg-amber-500 */
+    color: #ffffff; /* text-white */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 9999px; /* rounded-full */
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    gap: 0.5rem; /* gap-2 */
+    transition: background-color 0.3s; /* transition-colors */
+}
+
+.product-card__button:hover {
+    background-color: #b7791f; /* hover:bg-amber-600 */
+}
+
+/* Estilos adicionales de home.css (si los hay) */
+/* Aquí puedes agregar cualquier estilo adicional que haya en home.css */

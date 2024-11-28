@@ -1,0 +1,29 @@
+/* NavBar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff; /* Cambia el color de fondo según sea necesario */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__logo img {
+    height: 40px; /* Ajusta el tamaño del logo */
+}
+
+.navbar__links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar__links li a {
+    text-decoration: none;
+    color: #2d3748; /* Color del texto */
+    font-weight: 600; /* Peso de la fuente */
+}
+
+.navbar__links li a:hover {
+    color: #d69e2e; /* Color al pasar el ratón */
+}
