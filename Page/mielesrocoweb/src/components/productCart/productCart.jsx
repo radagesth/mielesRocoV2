@@ -17,7 +17,7 @@ export const ProductCard = ({ product }) => {
                 <h3 className="product-card__title">{product.name}</h3>
                 <p className="product-card__description">{product.description}</p>
                 <div className="product-card__price-button">
-                    <span className="product-card__price">${product.price.toFixed(2)}</span>
+                    <span className="product-card__price">${product.price.toFixed(0)}</span>
                     <button
                         className="product-card__button"
                         onClick={() => dispatch({ type: 'ADD_ITEM', payload: product })}

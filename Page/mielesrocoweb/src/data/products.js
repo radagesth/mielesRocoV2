@@ -6,23 +6,16 @@ import { Product } from '../types/index';
 export const products = [
     {
       id: 1,
-      name: "Miel de Flores Silvestres",
-      price: 12.99,
-      image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80",
-      description: "Miel pura y natural recolectada de flores silvestres."
+      name: "Miel de Flores Silvestres 1KG",
+      price: 7000,
+      image: "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80",
+      description: "1 KG de Miel pura y natural recolectada de flores silvestres ubicadas en la Región del Maule de la Provincia de Linares."
     },
     {
       id: 2,
-      name: "Miel de Eucalipto",
-      price: 15.99,
-      image: "https://images.unsplash.com/photo-1558583055-d7ac00b1adca?auto=format&fit=crop&w=800&q=80",
-      description: "Miel aromática con propiedades medicinales."
-    },
-    {
-      id: 3,
-      name: "Miel de Lavanda",
-      price: 18.99,
+      name: "Miel de Flores Silvestres 250GR",
+      price: 2500,
       image: "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80",
-      description: "Delicada miel con suave aroma a lavanda."
+      description: "250 GR de Miel pura y natural recolectada de flores silvestres ubicadas en la Región del Maule de la Provincia de Linares."
     }
   ];
