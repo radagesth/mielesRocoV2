@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // Importar componentes
-import Home from './components/home/home.jsx';
+import Home from './components/home/Home.jsx';
 import NotFound from './components/notFound/notFound.jsx';
 import CheckoutForm from './components/checkoutForm/checkoutForm.jsx';
-import { CartProvider } from './context/CartContext'; 
+import { CartProvider } from './context/CartContext';
 
 
 
@@ -13,11 +13,11 @@ function App() {
     <div className="App">
       <Router>
         <CartProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/CheckoutForm" element={<CheckoutForm />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/CheckoutForm" element={<CheckoutForm />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </CartProvider>
       </Router>
     </div>
