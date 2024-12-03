@@ -9,13 +9,14 @@ import json
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 # Suponiendo que tienes un archivo donde guardas los pedidos anteriores
 previous_orders_file = 'previous_orders.json'  # Cambia esto según tu estructura
 
 @app.route('/api/getPreviousOrder', methods=['GET'])
 def get_previous_order():
-    if os.path.exists(previous_orders_file):
+    if os.path.exists(os.getcwd()):
         with open(previous_orders_file, 'r') as json_file:
             previous_order = json.load(json_file)
             return jsonify(previous_order), 200

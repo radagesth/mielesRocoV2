@@ -1,20 +1,18 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
 import { Minus, Plus, X } from 'lucide-react';
-import './cart.css';
+import './Cart.css';
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 export const Cart = () => {
     const { state, dispatch } = useCart();
+    sessionStorage.setItem('cart', JSON.stringify(state));
+    
     const navigate = useNavigate(); // Usar useNavigate
 
-
     const handleCheckout = () => {
-        navigate('/CheckoutForm'); // Redirigir a la ruta del formulario
+        navigate('/CheckoutForm'); // Redirigir a la ruta del formulario por defecto
     };
-
-
-
 
     return (
         <div className="cart">
@@ -70,11 +68,16 @@ export const Cart = () => {
                             <span className='cart__total__amount'>Total:</span>
                             <span className="cart__total__amount">${state.total.toFixed(0)}</span>
                         </div>
-                        <button 
+<<<<<<< HEAD
+                        <button onClick={handleCheckout} className="cart__item__button">
+                            { 'Proceder al Pago'} {/* Texto personalizado */}
+=======
+                        <button
                             onClick={handleCheckout} // Manejar clic en el botón
                             className="cart__item__button"
                         >
                             Proceder al Pago
+>>>>>>> 442917b9ad0c880c8f3314bc5c955ad9149c62f5
                         </button>
                     </div>
                 </>

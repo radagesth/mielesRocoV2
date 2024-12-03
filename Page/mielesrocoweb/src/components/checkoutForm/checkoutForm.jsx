@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useCart } from '../../context/CartContext';
+// import { useCart } from '../../context/CartContext';
+
 
 const CheckoutForm = () => {
     const [name, setName] = useState('');
@@ -8,8 +9,8 @@ const CheckoutForm = () => {
     const [delivery, setDelivery] = useState(false);
     const [address, setAddress] = useState('');
     const [previousOrder, setPreviousOrder] = useState(null); // Para almacenar el pedido anterior
-    const { state } = useCart(); // Obtener el estado del carrito
-
+    const  state  = JSON.parse(sessionStorage.getItem('cart'));
+    
     // Cargar datos del pedido anterior (ejemplo de archivo)
     useEffect(() => {
         const loadPreviousOrder = async () => {

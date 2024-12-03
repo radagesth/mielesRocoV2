@@ -5,7 +5,7 @@ import './ProductCart.css';
 
 export const ProductCard = ({ product }) => {
     const { dispatch } = useCart();
-
+    
     return (
         <div className="product-card">
             <img
