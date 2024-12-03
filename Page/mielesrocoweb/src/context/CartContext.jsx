@@ -68,7 +68,7 @@ const cartReducer = (state, action) => {
 // Proveedor del contexto del carrito
 export const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(cartReducer, initialState);
-
+    
     return (
         <CartContext.Provider value={{ state, dispatch }}>
             {children}
@@ -79,6 +79,7 @@ export const CartProvider = ({ children }) => {
 // Hook para usar el contexto del carrito
 export const useCart = () => {
     const context = useContext(CartContext);
+    
     if (!context) {
         throw new Error('useCart must be used within a CartProvider');
     }

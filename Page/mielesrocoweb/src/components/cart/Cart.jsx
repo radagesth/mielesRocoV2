@@ -6,10 +6,12 @@ import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 export const Cart = () => {
     const { state, dispatch } = useCart();
+    sessionStorage.setItem('cart', JSON.stringify(state));
+    
     const navigate = useNavigate(); // Usar useNavigate
 
     const handleCheckout = () => {
-        navigate('/CheckoutForm'); // Redirigir a la ruta del formulario
+        navigate('/CheckoutForm'); // Redirigir a la ruta del formulario por defecto
     };
 
     return (
@@ -66,11 +68,8 @@ export const Cart = () => {
                             <span className='cart__total__amount'>Total:</span>
                             <span className="cart__total__amount">${state.total.toFixed(0)}</span>
                         </div>
-                        <button 
-                            onClick={handleCheckout} // Manejar clic en el botón
-                            className="cart__item__button"
-                        >
-                            Proceder al Pago
+                        <button onClick={handleCheckout} className="cart__item__button">
+                            { 'Proceder al Pago'} {/* Texto personalizado */}
                         </button>
                     </div>
                 </>
