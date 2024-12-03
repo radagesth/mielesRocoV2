@@ -14,6 +14,7 @@ const CheckoutForm = () => {
     useEffect(() => {
         const loadPreviousOrder = async () => {
             try {
+                console.log("loadPreviousOrder")
                 const response = await axios.get('http://localhost:5000/api/getPreviousOrder'); // Cambia esto a tu endpoint
                 setPreviousOrder(response.data); // Suponiendo que la respuesta es un objeto con datos del pedido
             } catch (error) {
