@@ -68,16 +68,11 @@ export const Cart = () => {
                             <span className='cart__total__amount'>Total:</span>
                             <span className="cart__total__amount">${state.total.toFixed(0)}</span>
                         </div>
-<<<<<<< HEAD
-                        <button onClick={handleCheckout} className="cart__item__button">
-                            { 'Proceder al Pago'} {/* Texto personalizado */}
-=======
                         <button
                             onClick={handleCheckout} // Manejar clic en el botón
                             className="cart__item__button"
                         >
                             Proceder al Pago
->>>>>>> 442917b9ad0c880c8f3314bc5c955ad9149c62f5
                         </button>
                     </div>
                 </>

@@ -1,9 +1,9 @@
 {
     "formData": {
-        "name": "Roberto Reyes",
+        "name": "Rodrigo",
         "phone": "964388698",
-        "delivery": true,
-        "address": "Pasaje Nueva Uno 7575"
+        "delivery": false,
+        "address": ""
     },
     "cartData": [
         {
@@ -14,7 +14,7 @@
                 "image": "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80",
                 "description": "1 KG de Miel pura y natural recolectada de flores silvestres ubicadas en la Regi\u00f3n del Maule de la Provincia de Linares."
             },
-            "quantity": 2
+            "quantity": 4
         },
         {
             "product": {
@@ -24,7 +24,7 @@
                 "image": "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80",
                 "description": "250 GR de Miel pura y natural recolectada de flores silvestres ubicadas en la Regi\u00f3n del Maule de la Provincia de Linares."
             },
-            "quantity": 2
+            "quantity": 4
         }
     ]
 }
