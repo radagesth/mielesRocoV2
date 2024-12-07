@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+#dev
+/backend/apis/backups/*.json
 # testing
 /coverage
 
