@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { useCart } from '../../context/CartContext';
-
 
 const CheckoutForm = () => {
     const [name, setName] = useState('');
@@ -9,7 +7,7 @@ const CheckoutForm = () => {
     const [delivery, setDelivery] = useState(false);
     const [address, setAddress] = useState('');
     const [previousOrder, setPreviousOrder] = useState(null); // Para almacenar el pedido anterior
-    const  state  = JSON.parse(sessionStorage.getItem('cart'));
+    const state = JSON.parse(sessionStorage.getItem('cart'));
     
     // Cargar datos del pedido anterior (ejemplo de archivo)
     useEffect(() => {
@@ -57,7 +55,7 @@ const CheckoutForm = () => {
     return (
         <form onSubmit={handleSubmit} className="checkout-form">
             <h2>Formulario de Compra</h2>
-            <div>
+            <div className="form-group">
                 <label htmlFor="name">Nombre:</label>
                 <input
                     type="text"
@@ -67,7 +65,7 @@ const CheckoutForm = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="phone">Teléfono:</label>
                 <input
                     type="tel"
@@ -77,7 +75,7 @@ const CheckoutForm = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="form-group">
                 <label htmlFor="delivery">¿Requiere entrega?</label>
                 <input
                     type="checkbox"
@@ -87,7 +85,7 @@ const CheckoutForm = () => {
                 />
             </div>
             {delivery && (
-                <div>
+                <div className="form-group">
                     <label htmlFor="address">Dirección:</label>
                     <input
                         type="text"
@@ -99,7 +97,7 @@ const CheckoutForm = () => {
                 </div>
             )}
             <h3>Resumen del Carrito</h3>
-            <ul>
+            <ul className="cart-summary">
                 {state.items.length > 0 ? (
                     state.items.map((item) => (
                         <li key={item.product.id}>
@@ -113,7 +111,7 @@ const CheckoutForm = () => {
             {previousOrder && (
                 <>
                     <h3>Pedido Anterior</h3>
-                    <ul>
+                    <ul className="previous-order">
                         {previousOrder.cartData.map((item) => (
                             <li key={item.product.id}>
                                 {item.product.name} - Cantidad: {item.quantity} - Precio: ${item.product.price.toFixed(2)}
@@ -122,7 +120,7 @@ const CheckoutForm = () => {
                     </ul>
                 </>
             )}
-            <button type="submit">Guardar y Proceder</button>
+            <button type="submit" className="submit-button">Guardar y Proceder</button>
         </form>
     );
 };
