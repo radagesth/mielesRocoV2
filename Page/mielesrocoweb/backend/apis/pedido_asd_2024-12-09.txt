@@ -1,6 +1,6 @@
-Nombre: qwe
-Telefono: 123
-Requiere entrega: Si
-Direccion: asd 123 
+Nombre: asd
+Teléfono: 123
+Requiere entrega: Sí
+Dirección: asd 123 123 
 Productos:
 - Miel de Flores Silvestres 250GR (Cantidad: 1, Precio: $2500)

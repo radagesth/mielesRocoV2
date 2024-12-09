@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 import './checkoutForm.css';
 
 const CheckoutForm = () => {
@@ -11,6 +12,7 @@ const CheckoutForm = () => {
     const [popupMessage, setPopupMessage] = useState('');
     const [popupVisible, setPopupVisible] = useState(false);
     const state = JSON.parse(sessionStorage.getItem('cart'));
+    const navigate = useNavigate(); // Usar useNavigate
 
     // Cargar datos del pedido anterior
     useEffect(() => {
@@ -58,6 +60,7 @@ const CheckoutForm = () => {
 
     const closePopup = () => {
         setPopupVisible(false);
+        navigate('/'); // Redirigir al inicio
     };
 
     return (
@@ -75,7 +78,7 @@ const CheckoutForm = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="phone">Teléfono:</label>
+                    <label htmlFor="phone">Telefono:</label>
                     <input
                         type="tel"
                         id="phone"
@@ -102,7 +105,7 @@ const CheckoutForm = () => {
                 </div>
                 {delivery && (
                     <div className="form-group">
-                        <label htmlFor="address">Dirección:</label>
+                        <label htmlFor="address">Direccion:</label>
                         <input
                             type="text"
                             id="address"
@@ -131,8 +134,7 @@ const CheckoutForm = () => {
                             {previousOrder.cartData.map((item) => (
                                 <li key={item.product.id}>
                                     {item.product.name} - Cantidad: {item.quantity} - Precio: ${item.product.price.toFixed(2)}
-                                </li>
-                            ))}
+                                </li> ))}
                         </ul>
                     </>
                 )}
