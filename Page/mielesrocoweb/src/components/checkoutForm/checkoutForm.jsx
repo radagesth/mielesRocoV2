@@ -8,15 +8,15 @@ const CheckoutForm = () => {
     const [phone, setPhone] = useState('');
     const [delivery, setDelivery] = useState(false);
     const [address, setAddress] = useState('');
-    const [previousOrder, setPreviousOrder] = useState(null); // Para almacenar el pedido anterior
+    const [email, setEmail] = useState('');
+    const [previousOrder, setPreviousOrder] = useState(null); 
     const  state  = JSON.parse(sessionStorage.getItem('cart'));
     
-    // Cargar datos del pedido anterior (ejemplo de archivo)
     useEffect(() => {
         const loadPreviousOrder = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/getPreviousOrder'); // Cambia esto a tu endpoint
-                setPreviousOrder(response.data); // Suponiendo que la respuesta es un objeto con datos del pedido
+                const response = await axios.get('http://localhost:5000/api/getPreviousOrder'); 
+                setPreviousOrder(response.data); 
             } catch (error) {
                 console.error('Error al cargar el pedido anterior:', error);
             }
@@ -33,6 +33,7 @@ const CheckoutForm = () => {
             phone,
             delivery,
             address,
+            email
         };
 
         const fileName = `${formData.name}-${new Date().toISOString().slice(0, 10)}.json`;
@@ -40,17 +41,20 @@ const CheckoutForm = () => {
         try {
             const response = await axios.post('http://localhost:5000/api/saveCheckoutData', {
                 formData,
-                cartData: state.items, // Enviar los datos del carrito
+                cartData: state.items, 
                 fileName,
             });
 
             if (response.status === 200) {
                 console.log('Datos guardados correctamente');
-                // Aquí puedes agregar lógica adicional, como redirigir al usuario o mostrar un mensaje de éxito
+                try {
+                    const response = await axios.post('http://localhost:5000/api/sendEmail'); 
+                } catch (error) {
+                    console.error('Error al cargar el pedido anterior:', error);
+                }
             }
         } catch (err) {
             console.error('Error al guardar los datos:', err);
-            // Manejo de errores, mostrar un mensaje al usuario
         }
     };
 
@@ -74,6 +78,16 @@ const CheckoutForm = () => {
                     id="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    required
+                />
+            </div>
+            <div>
+                <label htmlFor="email">Correo:</label>
+                <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                 />
             </div>
@@ -110,7 +124,7 @@ const CheckoutForm = () => {
                     <li>No hay productos en el carrito.</li>
                 )}
             </ul>
-            {previousOrder && (
+            {/* {previousOrder && (
                 <>
                     <h3>Pedido Anterior</h3>
                     <ul>
@@ -121,7 +135,7 @@ const CheckoutForm = () => {
                         ))}
                     </ul>
                 </>
-            )}
+            )} */}
             <button type="submit">Guardar y Proceder</button>
         </form>
     );
