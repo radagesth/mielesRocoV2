@@ -8,3 +8,5 @@ npm install axios
 # Bibliotecas a instalar en Backend
 pip install Flask
 pip install flask-cors
+
+# Instalar a través de batch
