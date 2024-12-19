@@ -1,7 +1,7 @@
 Nombre: Rodrigo
 Telefono: 964388698
-Requiere entrega: Si
-Direccion: Pasaje Nueva Uno 7575
+Requiere entrega: No
+Direccion: 
 Productos:
 - Miel de Flores Silvestres 1KG (Cantidad: 1, Precio: $7000)
 - Miel de Flores Silvestres 250GR (Cantidad: 1, Precio: $2500)
