@@ -1,13 +1,13 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
 import { Minus, Plus, X } from 'lucide-react';
-import './Cart.css';
+import './cart.css';
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 export const Cart = () => {
     const { state, dispatch } = useCart();
     sessionStorage.setItem('cart', JSON.stringify(state));
-
+    
     const navigate = useNavigate(); // Usar useNavigate
 
     const handleCheckout = () => {
