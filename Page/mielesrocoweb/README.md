@@ -7,3 +7,12 @@ npm install axios
 # Backend
 pip install Flask
 pip install flask-cors
+
+
+
+
+
+
+
+
+# Tareas pendientes :
