@@ -58,13 +58,22 @@ const CheckoutForm = () => {
         }
     };
 
+    const handleClickOutside = (e) => {
+        const isPopUpVisible = popupVisible;
+        const elementContainsPopUp = e.target.className.includes("popup");
+
+        if (isPopUpVisible && elementContainsPopUp) {
+            closePopup();
+        }
+    };
+
     const closePopup = () => {
         setPopupVisible(false);
         navigate('/'); // Redirigir al inicio
     };
 
     return (
-        <div>
+        <div onClick={handleClickOutside} >
             <form onSubmit={handleSubmit} className="checkout-form">
                 <h2>Formulario de Compra</h2>
                 <div className="form-group">
@@ -134,7 +143,7 @@ const CheckoutForm = () => {
                             {previousOrder.cartData.map((item) => (
                                 <li key={item.product.id}>
                                     {item.product.name} - Cantidad: {item.quantity} - Precio: ${item.product.price.toFixed(2)}
-                                </li> ))}
+                                </li>))}
                         </ul>
                     </>
                 )}
@@ -149,7 +158,7 @@ const CheckoutForm = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </div >
     );
 };
 
