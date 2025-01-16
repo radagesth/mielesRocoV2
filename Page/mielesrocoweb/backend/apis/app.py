@@ -2,45 +2,44 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
-import json
-
-from flask import Flask, request, jsonify
-import json
-import os
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
 
-# Suponiendo que tienes un archivo donde guardas los pedidos anteriores
-previous_orders_file = 'previous_orders.json'  # Cambia esto según tu estructura
-
 @app.route('/api/getPreviousOrder', methods=['GET'])
 def get_previous_order():
-    if os.path.exists(os.getcwd()):
-        with open(previous_orders_file, 'r') as json_file:
-            previous_order = json.load(json_file)
-            return jsonify(previous_order), 200
-    else:
-        return jsonify({'message': 'No hay pedidos anteriores.'}), 404
+    # Aquí puedes implementar la lógica para obtener pedidos anteriores si es necesario
+    return jsonify({'message': 'No hay pedidos anteriores.'}), 404
 
 @app.route('/api/saveCheckoutData', methods=['POST'])
 def save_checkout_data():
     data = request.json
     form_data = data['formData']
     cart_data = data['cartData']
-    file_name = data['fileName']
 
-    # Crear un diccionario con los datos
-    checkout_data = {
-        'formData': form_data,
-        'cartData': cart_data
-    }
+    # Formatear la fecha actual
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    # Crear el nombre del archivo
+    file_name = f"pedido_{form_data['name']}_{current_date}.txt"
 
-    # Guardar los datos en un archivo JSON
-    with open(previous_orders_file, 'w') as json_file:
-        json.dump(checkout_data, json_file, indent=4)
+    # Crear un string con los datos
+    checkout_data = f"Nombre: {form_data['name']}\n" \
+                    f"Telefono: {form_data['phone']}\n" \
+                    f"Requiere entrega: {'Si' if form_data['delivery'] else 'No'}\n" \
+                    f"Direccion: {form_data['address']}\n" \
+                    f"Productos:\n"
 
-    return jsonify({'message': 'Datos guardados correctamente'}), 200
+    for item in cart_data:
+        checkout_data += f"- {item['product']['name']} (Cantidad: {item['quantity']}, Precio: ${item['product']['price']})\n"
+
+    try:
+        # Guardar los datos en un archivo de texto con el nombre especificado
+        with open(file_name, 'w') as txt_file:
+            txt_file.write(checkout_data)
+        return jsonify({'message': 'Datos guardados correctamente', 'fileName': file_name}), 200
+    except Exception as e:
+        return jsonify({'message': 'Error al guardar los datos', 'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
