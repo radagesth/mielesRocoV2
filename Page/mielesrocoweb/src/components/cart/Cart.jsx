@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
 import { Minus, Plus, X } from 'lucide-react';
-import './cart.css';
+import './Cart.css'; 
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 export const Cart = () => {

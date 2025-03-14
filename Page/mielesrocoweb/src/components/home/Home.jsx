@@ -3,6 +3,7 @@ import './home.css';
 import { CartProvider } from '../../context/CartContext';
 import { ProductList } from '../productList/productList';
 import { Cart } from '../cart/Cart';
+import Footer from '../footer/Footer';
 
 function home() {
     return (
@@ -16,6 +17,7 @@ function home() {
                     <Cart />
                 </div>
             </div>
+         <Footer />
         </CartProvider>
     );
 }
