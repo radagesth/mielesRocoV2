@@ -48,9 +48,11 @@
     padding: 0.5rem 1rem; /* px-4 py-2 */
     border-radius: 9999px; /* rounded-full */
     display: flex; /* flex */
-    align-items: center; /* items-center */
     gap: 0.5rem; /* gap-2 */
     transition: background-color 0.3s; /* transition-colors */
+    align-items: center !important; /* Corregido */
+    justify-content: center; /* Centrar horizontalmente */
+    width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
 }
 
 .product-card__button:hover {

@@ -19,7 +19,7 @@ export const ProductCard = ({ product }) => {
                 <div className="product-card__price-button">
                     <span className="product-card__price">${product.price.toFixed(0)}</span>
                     <button
-                        className="product-card__button"
+                        className="product-card__button" 
                         onClick={() => dispatch({ type: 'ADD_ITEM', payload: product })}
                     >
                         <Plus size={18} /> Agregar al Carrito
