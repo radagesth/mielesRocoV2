@@ -5,7 +5,7 @@ import Home from './components/home/Home.jsx';
 import NotFound from './components/notFound/notFound.jsx';
 import CheckoutForm from './components/checkoutForm/checkoutForm.jsx';
 import { CartProvider } from './context/CartContext';
-
+import NuestroTrabajo from './components/nuestroTrabajo/nuestroTrabajo.jsx';
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         <CartProvider>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/NuestroTrabajo" element={<NuestroTrabajo />} />
             <Route path="/CheckoutForm" element={<CheckoutForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
