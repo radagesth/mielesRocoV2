@@ -29,7 +29,7 @@ const Footer = () => {
                 
                 <div className="footer__section">
                     <h3>Horario de Entrega</h3>
-                    <p>Lunes a Viernes: 20:00 - 22:00</p>
+                    <p>Lunes a Viernes </p>
                 </div>
 
                 {/* Nuevo apartado para "Nuestro Trabajo" */}

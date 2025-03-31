@@ -85,8 +85,8 @@ const CheckoutForm = () => {
                         value={phone}
                         onChange={(e) => {
                             const value = e.target.value;
-                            // Filtrar solo números
-                            const numericValue = value.replace(/[^0-9]/g, '');
+                            // Filtrar solo números y limitar a 11 digitos
+                            const numericValue = value.replace(/[^0-9]/g, '').slice(0, 11);
                             setPhone(numericValue);
                         }}
                         required
@@ -138,7 +138,9 @@ const CheckoutForm = () => {
                         </ul>
                     </>
                 )}
-                <button type="submit" className="submit-button">Guardar y Proceder</button>
+                <button type="submit" className="submit-button" onClick={() => {window.alert(
+            "Si los datos ingresados no son válidos, el pedido se eliminará en 24 horas."
+        );}}>Guardar y Proceder</button>
             </form>
 
             {popupVisible && (
