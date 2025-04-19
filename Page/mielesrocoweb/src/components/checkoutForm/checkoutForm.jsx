@@ -18,7 +18,7 @@ const CheckoutForm = () => {
     useEffect(() => {
         const loadPreviousOrder = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/getPreviousOrder');
+                const response = await axios.get('http://www.mielesroco.cl/api/getPreviousOrder');
                 setPreviousOrder(response.data);
             } catch (error) {
                 console.error('Error al cargar el pedido anterior:', error);
@@ -41,7 +41,7 @@ const CheckoutForm = () => {
         const fileName = `${formData.name}-${new Date().toISOString().slice(0, 10)}.json`;
 
         try {
-            const response = await axios.post('http://localhost:5000/api/saveCheckoutData', {
+            const response = await axios.post('http://www.mielesroco.cl/api/saveCheckoutData', {
                 formData,
                 cartData: state.items,
                 fileName,
