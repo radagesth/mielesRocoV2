@@ -10,6 +10,7 @@ CORS(app)
 @app.route('/api/getPreviousOrder', methods=['GET'])
 def get_previous_order():
     # Aquí puedes implementar la lógica para obtener pedidos anteriores si es necesario
+    
     return jsonify({'message': 'No hay pedidos anteriores.'}), 404
 
 @app.route('/api/saveCheckoutData', methods=['POST'])
@@ -42,4 +43,4 @@ def save_checkout_data():
         return jsonify({'message': 'Error al guardar los datos', 'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host ="mielesroco.cl",debug = True)
