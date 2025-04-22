@@ -9,6 +9,8 @@ import { Contact } from './pages/Contact';
 import { Cart } from './components/cart/Cart';
 import { CheckoutForm } from './components/checkout/CheckoutForm';
 import { CartProvider } from './context/CartContext';
+import {CheckoutForm} from '../backend/apis/app.py';
+import PreviousOrder from '../backend/apis/previous_orders.json';
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkoutform" element={<CheckoutForm />} />
+              <Route path="/Previousorder" element={<PreviousOrder />} />
               <Route path="/Footer" element={<Footer />} />
+              
             </Routes>
           </main>
 
